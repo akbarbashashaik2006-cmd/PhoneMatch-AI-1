@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaik Akbar Basha — Accessory Expert</title>
+  <meta name="description" content="Identify any smartphone instantly and discover every compatible accessory with professional precision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  
+  <!-- PWA & Mobile Meta -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#08080f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="author" content="Shaik Akbar Basha" />
+  <meta name="copyright" content="Copyright © 2026 Shaik Akbar Basha. All rights reserved." />
+</head>
+<body>
+
+  <!-- Ambient Background -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">SAB<span class="logo-accent"> Expert</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#" class="nav-link active" data-target="upload">Home</a>
+        <a href="#" class="nav-link" data-target="analytics">Analytics</a>
+        <a href="#how-it-works" class="nav-link">How it works</a>
+        <a href="#features" class="nav-link">Features</a>
+      </div>
+      <a href="#app" class="nav-cta">Try Free →</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>
+        <span>Powered by Shaik Akbar Basha</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line-1">Snap your phone.</span>
+        <span class="line-2">Find <em>every</em> accessory</span>
+        <span class="line-3">that fits it.</span>
+      </h1>
+      <p class="hero-sub">
+        Upload any photo of a smartphone — we identify the exact model using advanced pattern recognition
+        and surface all compatible accessories instantly. No searching. No guessing.
+      </p>
+      <div class="hero-actions">
+        <a href="#app" class="btn-primary">
+          <span class="btn-icon">⚡</span>
+          Identify My Phone
+        </a>
+        <a href="#how-it-works" class="btn-ghost">See how it works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Phone Models</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Accuracy Rate</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">&lt;3s</span><span class="stat-label">Analysis Time</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="scan-line"></div>
+            <div class="scan-dots">
+              <div class="sdot"></div><div class="sdot"></div><div class="sdot"></div>
+              <div class="sdot"></div><div class="sdot"></div><div class="sdot"></div>
+              <div class="sdot"></div><div class="sdot"></div><div class="sdot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-acc acc-a">⚡ 45W Charger</div>
+        <div class="floating-acc acc-b">🛡️ MagSafe Case</div>
+        <div class="floating-acc acc-c">🎧 AirPods Pro</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Process</div>
+        <h2 class="section-title">Three steps to the<br>perfect accessory</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card" style="--delay:0s">
+          <div class="step-num">01</div>
+          <div class="step-icon-wrap">📸</div>
+          <h3>Upload Photo</h3>
+          <p>Take a photo of your phone or drag an existing image. JPG, PNG, WEBP, and HEIC are all supported.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true"><span>→</span></div>
+        <div class="step-card" style="--delay:0.1s">
+          <div class="step-num:02"></div>
+          <div class="step-icon-wrap">🧠</div>
+          <h3>Expert Analysis</h3>
+          <p>Our intelligent system analyzes chassis shape, ports, buttons, and design language to identify the exact model.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true"><span>→</span></div>
+        <div class="step-card" style="--delay:0.2s">
+          <div class="step-num">03</div>
+          <div class="step-icon-wrap">🎯</div>
+          <h3>Get Accessories</h3>
+          <p>Receive a curated list of accessories that are confirmed compatible with your specific device model and generation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Features</div>
+        <h2 class="section-title">Everything you need to<br>accessorize perfectly</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card feature-large">
+          <div class="feat-icon">🔬</div>
+          <h3>Deep Device Analysis</h3>
+          <p>The system doesn't just see a "Samsung phone" — it distinguishes between Galaxy S24 Ultra and S24+, identifying exact generation, color, and hardware revision.</p>
+          <div class="feat-tags">
+            <span>Pattern Recognition</span><span>Smart Core</span><span>98% accuracy</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon">⚡</div>
+          <h3>Charging Intelligence</h3>
+          <p>Identifies exact charging standard — PD 3.1, MagSafe, Qi2, 120W SuperVOOC — and matches the fastest compatible charger.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon">🛡️</div>
+          <h3>Case Precision Fit</h3>
+          <p>Camera bump size, button placement, and edge profile are all factored in for exact-fit case recommendations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon">🔌</div>
+          <h3>Port Detection</h3>
+          <p>Distinguishes USB-C, Lightning, USB-C with Thunderbolt 4, and micro-USB — recommends cables accordingly.</p>
+        </div>
+        <div class="feature-card feature-large feature-right">
+          <div class="feat-icon">📊</div>
+          <h3>Confidence Scoring</h3>
+          <p>Every identification comes with a confidence percentage. If the image is unclear, the system asks for a better photo rather than guessing wrong.</p>
+          <div class="feat-score-demo">
+            <div class="score-bar-demo">
+              <span>iPhone 15 Pro</span>
+              <div class="bar-demo"><div class="bar-fill-demo" style="width:94%"></div></div>
+              <span>94%</span>
+            </div>
+            <div class="score-bar-demo">
+              <span>iPhone 15 Pro Max</span>
+              <div class="bar-demo"><div class="bar-fill-demo" style="width:61%"></div></div>
+              <span>61%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main App -->
+  <section class="section app-section" id="app">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Live Demo</div>
+        <h2 class="section-title">Try it right now</h2>
+        <p class="section-sub">Drop a phone photo and watch the scanner work</p>
+      </div>
+
+      <div class="app-wrapper">
+
+        <!-- Step 1: Upload -->
+        <div class="app-panel" id="panel-upload">
+          <div class="upload-zone" id="uploadZone" role="button" tabindex="0" aria-label="Upload phone image">
+            <input type="file" id="fileInput" accept="image/*" aria-label="Select image file" />
+            <div class="upload-content">
+              <div class="upload-ring">
+                <div class="upload-ring-inner">
+                  <span class="upload-emoji">📷</span>
+                </div>
+              </div>
+              <h3>Drop your phone photo here</h3>
+              <p>or <span class="link-style">click to browse</span> your files</p>
+              <div class="format-tags">
+                <span>JPG</span><span>PNG</span><span>WEBP</span><span>HEIC</span><span>GIF</span>
+              </div>
+            </div>
+            <div class="upload-hint">Max 20MB · Any smartphone brand</div>
+          </div>
+
+          <!-- Camera Zone -->
+          <div class="camera-actions" style="margin-top:20px; text-align:center;">
+             <button class="btn-ghost" id="startCameraBtn" style="width:100%; border-radius: var(--radius-2xl);">
+               <span class="btn-icon">📷</span> Scan with Camera
+             </button>
+          </div>
+          <div class="camera-zone hidden" id="cameraZone" style="margin-top:20px; position:relative; border-radius:var(--radius-2xl); overflow:hidden; border: 2px solid var(--accent);">
+            <video id="cameraVideo" autoplay playsinline style="width:100%; height:auto; display:block; aspect-ratio:3/4; object-fit:cover; background:#000;"></video>
+            <div class="camera-overlay" style="position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 0 50px rgba(0,0,0,0.8);">
+               <div style="position:absolute; top:20px; left:20px; width:40px; height:40px; border-top:3px solid var(--accent); border-left:3px solid var(--accent);"></div>
+               <div style="position:absolute; top:20px; right:20px; width:40px; height:40px; border-top:3px solid var(--accent); border-right:3px solid var(--accent);"></div>
+               <div style="position:absolute; bottom:20px; left:20px; width:40px; height:40px; border-bottom:3px solid var(--accent); border-left:3px solid var(--accent);"></div>
+               <div style="position:absolute; bottom:20px; right:20px; width:40px; height:40px; border-bottom:3px solid var(--accent); border-right:3px solid var(--accent);"></div>
+               <div class="scan-line" style="top:50%; animation-duration: 2s; height:1px;"></div>
+               <div class="camera-corner-labels" style="position:absolute; bottom:80px; left:20px; color:rgba(255,255,255,0.6); font-family:monospace; font-size:10px; pointer-events:none;">
+                 <span style="display:block;">SA_TECH_v1.0</span>
+                 <span style="display:block;">TARGET_LOCKED</span>
+               </div>
+               <!-- Flashlight Toggle -->
+               <button id="torchBtn" style="position:absolute; top:20px; right:20px; width:44px; height:44px; background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.2); border-radius:50%; color:#fff; display:flex; align-items:center; justify-content:center; pointer-events:auto; backdrop-filter:blur(10px); z-index:10;" title="Toggle Flashlight">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 2 3 11-9-4 12 10-3-11 9 4z"/></svg>
+               </button>
+            </div>
+            <button class="btn-primary btn-full" id="snapPhotoBtn" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); width:calc(100% - 40px);">
+              🔍 Capture & Identify
+            </button>
+            <canvas id="cameraCanvas" style="display:none;"></canvas>
+          </div>
+
+          </div>
+
+          <!-- Scan History (New) -->
+          <div id="historySection" class="hidden" style="margin-top:40px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:15px;">
+              <h3 style="font-family:var(--font-display); font-size:18px; color:var(--text); display:flex; align-items:center; gap:8px;">
+                <span>🕒</span> Recent Scans
+              </h3>
+              <button class="btn-ghost btn-sm" id="clearHistoryBtn" style="font-size:12px; opacity:0.6;">Clear All</button>
+            </div>
+            <div id="historyGrid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap:12px;">
+              <!-- History items will be injected here -->
+            </div>
+          </div>
+            <span class="try-label">No photo? Try an example:</span>
+            <div class="example-btns">
+              <button class="example-btn" data-phone="iPhone 15 Pro Max">🍎 iPhone 15 Pro</button>
+              <button class="example-btn" data-phone="Samsung Galaxy S24 Ultra">🤖 Galaxy S24 Ultra</button>
+              <button class="example-btn" data-phone="Google Pixel 8 Pro">🔵 Pixel 8 Pro</button>
+              <button class="example-btn" data-phone="OnePlus 12">🔴 OnePlus 12</button>
+              <button class="example-btn" data-phone="Oppo Find X7 Ultra">🟢 Oppo Find X7</button>
+              <button class="example-btn" data-phone="Vivo X100 Pro">🔵 Vivo X100</button>
+              <button class="example-btn" data-phone="Xiaomi 14 Ultra">📷 Xiaomi 14</button>
+              <button class="example-btn" data-phone="Realme GT5 Pro">💥 Realme GT5</button>
+              <button class="example-btn" data-phone="Invalid Object">☕ Not a Phone</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Preview -->
+        <div class="app-panel hidden" id="panel-preview">
+          <div class="preview-layout">
+            <div class="preview-image-box">
+              <img id="previewImg" src="" alt="Uploaded phone" />
+              <button class="preview-remove" id="removeBtn" aria-label="Remove image">✕</button>
+            </div>
+            <div class="preview-details">
+              <div class="preview-file-info">
+                <div class="pfi-name" id="pfiName">—</div>
+                <div class="pfi-meta" id="pfiMeta">—</div>
+              </div>
+              <div class="preview-checks">
+                <div class="pcheck"><span class="pcheck-dot ok"></span>Image loaded successfully</div>
+                <div class="pcheck"><span class="pcheck-dot ok"></span>Format supported</div>
+                <div class="pcheck" id="sizeCheck"><span class="pcheck-dot ok"></span>Size within limits</div>
+              </div>
+              <button class="btn-primary btn-full" id="analyzeBtn">
+                <span>🔍</span> Identify Phone &amp; Find Accessories
+              </button>
+              <button class="btn-text" id="changeImageBtn">← Choose a different image</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Loading -->
+        <div class="app-panel hidden" id="panel-loading">
+          <div class="loading-layout">
+            <div class="ai-scanner">
+              <div class="scanner-rings">
+                <div class="s-ring r1"></div>
+                <div class="s-ring r2"></div>
+                <div class="s-ring r3"></div>
+              </div>
+              <div class="scanner-center">🧠</div>
+            </div>
+            <div class="loading-text">
+              <h3 id="loadingTitle">Analyzing your photo</h3>
+              <p id="loadingSubtitle">Our system is processing every pixel...</p>
+            </div>
+            <div class="progress-steps" id="progressSteps">
+              <div class="prog-step active" id="ps1">
+                <div class="ps-dot"></div>
+                <span>Detecting phone model &amp; brand</span>
+              </div>
+              <div class="prog-step" id="ps2">
+                <div class="ps-dot"></div>
+                <span>Identifying generation &amp; specs</span>
+              </div>
+              <div class="prog-step" id="ps3">
+                <div class="ps-dot"></div>
+                <span>Matching compatible accessories</span>
+              </div>
+              <div class="prog-step" id="ps4">
+                <div class="ps-dot"></div>
+                <span>Preparing your results</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Error -->
+        <div class="app-panel hidden" id="panel-error">
+          <div class="error-layout">
+            <div class="error-icon">⚠️</div>
+            <h3>Couldn't identify the phone</h3>
+            <p id="errorMsg">Please upload a clearer photo showing the front or back of a smartphone.</p>
+            <div class="error-tips">
+              <div class="tip">✓ Ensure the phone is the main subject</div>
+              <div class="tip">✓ Good lighting helps accuracy</div>
+              <div class="tip">✓ Avoid heavy filters or extreme angles</div>
+            </div>
+            <button class="btn-primary" id="errorRetryBtn">Try Another Photo</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Results -->
+        <div class="app-panel hidden" id="panel-results">
+
+          <!-- Phone identified banner -->
+          <div class="result-banner" id="resultBanner">
+            <div class="rb-img">
+              <img id="rbImg" src="" alt="" />
+            </div>
+            <div class="rb-info">
+              <div class="rb-tag">Phone Identified</div>
+              <div class="rb-model" id="rbModel">—</div>
+              <div class="rb-desc" id="rbDesc">—</div>
+              <div class="rb-confidence">
+                <span class="rbc-label">Confidence</span>
+                <div class="rbc-bar"><div class="rbc-fill" id="rbcFill"></div></div>
+                <span class="rbc-pct" id="rbcPct">—</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="manualBrandSelector" class="hidden" style="margin-top:20px; padding:20px; background:rgba(255,255,255,0.03); border:1px dashed var(--border); border-radius:var(--radius-lg); text-align:center;">
+            <p style="font-size:13px; color:var(--text2); margin-bottom:15px;">System is uncertain. Please select your brand for better accuracy:</p>
+            <div class="brand-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
+              <button class="btn-ghost btn-sm brand-select-btn" data-phone="iPhone 15 Pro Max">Apple</button>
+              <button class="btn-ghost btn-sm brand-select-btn" data-phone="Samsung Galaxy S24 Ultra">Samsung</button>
+              <button class="btn-ghost btn-sm brand-select-btn" data-phone="Oppo Find X7 Ultra">Oppo</button>
+              <button class="btn-ghost btn-sm brand-select-btn" data-phone="Vivo X100 Pro">Vivo</button>
+              <button class="btn-ghost btn-sm brand-select-btn" data-phone="Xiaomi 14 Ultra">Xiaomi</button>
+              <button class="btn-ghost btn-sm brand-select-btn" data-phone="Realme GT5 Pro">Realme</button>
+            </div>
+          </div>
+
+          <!-- Shops Map Section -->
+          <div class="shops-section" style="margin-top:40px; border-top: 1px solid var(--border); padding-top:40px;">
+            <div class="section-header" style="text-align:center; margin-bottom:30px;">
+              <h3 style="font-family:var(--font-display); font-size:24px; color:var(--text); line-height:1.2;">📍 Find Nearby Shops</h3>
+              <p style="color:var(--text2); margin-top:8px;">Ready to buy? Locate the nearest mobile accessory stores in your area.</p>
+            </div>
+            
+            <div id="map-container" style="position:relative; margin-bottom:20px;">
+              <div id="map" style="height:400px; background:var(--surface2); border-radius:var(--radius-xl); border:1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,0.3); z-index:1;"></div>
+              <div id="map-overlay" style="position:absolute; inset:0; background:rgba(8,8,15,0.7); backdrop-filter:blur(4px); display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:var(--radius-xl); z-index:100; transition: opacity 0.3s ease;">
+                <button class="btn-primary" id="locateBtn">📍 Find Shops Near Me</button>
+                <p style="margin-top:15px; font-size:12px; color:var(--text3);">Requires location access</p>
+              </div>
+            </div>
+            <div id="shop-list" class="shop-list" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:15px; margin-top:20px;">
+              <!-- Dynamic shops list -->
+            </div>
+          </div>
+
+          <!-- Accessories -->
+          <div class="acc-section">
+            <div class="acc-section-header">
+              <h3 class="acc-title">Compatible Accessories</h3>
+              <div class="acc-filters" id="accFilters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="charger">Charger</button>
+                <button class="filter-btn" data-filter="cable">Cable</button>
+                <button class="filter-btn" data-filter="case">Case</button>
+                <button class="filter-btn" data-filter="earbuds">Audio</button>
+                <button class="filter-btn" data-filter="screen">Screen</button>
+              </div>
+            </div>
+            <div class="accessories-grid" id="accessoriesGrid"></div>
+          </div>
+
+          <!-- Tips -->
+          <div class="tips-section" id="tipsSection" style="display:none">
+            <div class="tips-card">
+              <div class="tips-header">
+                <span class="tips-icon">💡</span>
+                <span class="tips-label">Owner's Recommendations</span>
+              </div>
+              <p class="tips-text" id="tipsText"></p>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="result-actions">
+            <button class="btn-primary" id="newSearchBtn">
+              <span>🔄</span> Analyze Another Phone
+            </button>
+            <button class="btn-ghost" id="shareResultBtn">
+              <span>📤</span> Share Results
+            </button>
+          </div>
+
+          </div>
+
+        <!-- Step 6: Analytics Dashboard -->
+        <div class="app-panel hidden" id="panel-analytics">
+          <div class="analytics-layout">
+            <div class="analytics-header">
+              <div class="ah-left">
+                <h3 class="acc-title">Sales Analytics Dashboard</h3>
+                <p class="section-sub">Real-time performance metrics</p>
+              </div>
+              <div class="ah-right">
+                <div id="stockAlertBanner" class="stock-alert hidden">
+                  <span class="alert-icon">⚠️</span>
+                  <span id="stockAlertText">Low stock detected!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; margin-bottom:30px;">
+              <div class="stat-card-glass">
+                <div class="sc-label">Revenue Today</div>
+                <div class="sc-value" id="statSalesToday">₹0</div>
+              </div>
+              <div class="stat-card-glass">
+                <div class="sc-label">Items Sold</div>
+                <div class="sc-value" id="statItemsSold">0</div>
+              </div>
+              <div class="stat-card-glass">
+                <div class="sc-label">Monthly Profit</div>
+                <div class="sc-value" id="statMonthlyProfit">₹0</div>
+              </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-grid" style="display:grid; grid-template-columns: 2fr 1fr; gap:20px; margin-bottom:30px; height:300px;">
+              <div class="chart-box-glass">
+                <h4>Daily Sales Trend</h4>
+                <div class="chart-container"><canvas id="salesChart"></canvas></div>
+              </div>
+              <div class="chart-box-glass">
+                <h4>Top Categories</h4>
+                <div class="chart-container"><canvas id="productChart"></canvas></div>
+              </div>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="inventory-box-glass">
+              <h4>Inventory & Performance</h4>
+              <div class="table-wrap">
+                <table style="width:100%; border-collapse: collapse; text-align: left;">
+                  <thead>
+                    <tr style="border-bottom: 2px solid var(--border);">
+                      <th style="padding:15px 20px; color:var(--text3); font-size:12px; font-weight:700;">PRODUCT</th>
+                      <th style="padding:15px 20px; color:var(--text3); font-size:12px; font-weight:700;">SOLD</th>
+                      <th style="padding:15px 20px; color:var(--text3); font-size:12px; font-weight:700;">REVENUE</th>
+                      <th style="padding:15px 20px; color:var(--text3); font-size:12px; font-weight:700;">STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody id="analyticsTableBody">
+                    <!-- Dynamic Rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Brand Support -->
+  <section class="brands-section" id="brands">
+    <div class="container">
+      <p class="brands-label">Supports all major brands</p>
+      <div class="brands-scroll">
+        <div class="brands-track">
+          <span>Apple</span><span>Samsung</span><span>Google</span><span>OnePlus</span>
+          <span>Xiaomi</span><span>Oppo</span><span>Sony</span><span>Motorola</span>
+          <span>Nokia</span><span>Huawei</span><span>Vivo</span><span>Realme</span>
+          <span>Apple</span><span>Samsung</span><span>Google</span><span>OnePlus</span>
+          <span>Xiaomi</span><span>Oppo</span><span>Sony</span><span>Motorola</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">◈</span>
+          <span class="logo-text">Shaik Akbar<span class="logo-accent"> Basha</span></span>
+          <p>Professional accessory matching<br>built for enthusiasts.</p>
+        </div>
+        <div class="footer-links">
+          <div class="fl-col">
+            <h4>Product</h4>
+            <a href="#app">Try the App</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How it Works</a>
+          </div>
+          <div class="fl-col">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Shaik Akbar Basha. All rights reserved.</p>
+        <p class="footer-note">Handcrafted with precision for smartphone enthusiasts.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

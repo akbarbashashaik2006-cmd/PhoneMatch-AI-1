@@ -1,0 +1,18 @@
+{
+  "name": "Shaik Akbar Basha",
+  "short_name": "SAB_Expert",
+  "description": "Professional smartphone identification and accessory discovery.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#08080f",
+  "theme_color": "#7c5cfc",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/isometric/512/iphone-x.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait"
+}
